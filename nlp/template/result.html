@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            color: #333;
+            margin: 0;
+            background-color: #f5f5f5;
+            background-image: linear-gradient(to right top, #ff847c, #ffa07a, #ffb97d, #ffd074, #ffe666);
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            margin: 20px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .flex-btns {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .rounded-btn {
+            margin-bottom: 1rem;
+            padding: 1rem 2rem;
+            background-color: rgb(140, 49, 49);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .rounded-btn:hover {
+            background-color: #9a5b42;
+        }
+
+        .anish{
+            background-color: #f5f5f5;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col">
+    <nav class="bg-stone-800 text-white p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="space-x-4">
+                <a href="/" class="text-white hover:text-gray-300">Analysis</a>
+                <a href="#" class="text-white hover:text-gray-300">Contact</a>
+                <a href="/" class="text-white hover:text-gray-300">Home</a>
+            </div>
+            <div>
+                <a href="#" class="ml-3 mr-5 text-right text-white hover:text-gray-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex justify-center items-center h-full">
+        <div class="flex flex-col items-center text-black  anish">
+            {% for line in res %}
+                <p>{{ line }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="flex-btns justify-center">
+        <button class="rounded-btn">Individual Review Analysis</button>
+        <button class="rounded-btn ml-10">Overall Insights</button>
+    </div>
+</body>
+</html>
